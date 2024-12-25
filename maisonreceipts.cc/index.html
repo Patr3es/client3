@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anon’s Shop</title>
+        <link rel="icon" href="logox.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <meta property="og:image" content="maisonv2.png">
+    <meta name="theme-color" content="#2b2d31">
+    <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="oKP2GJ1vXqralNeSCJuJxHXgVvI5TbR5F2OsclzmYuk" />
+        <meta property="og:url" content="https://maisonreceipts.cc">
+        <meta property="og:title" content="Maison Receipts"
+        <meta name="keywords" content="Receipt, Invoice, Generator, Email, StockX, Discord">
+    <meta property="og:description" content="Number #1 Receipt Generator 🧾">
+    <meta property="og:image" content="maisonv2.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <style>
+        @font-face {
+    font-family: 'Poppins';
+    src: url(font/Poppins-Bold.ttf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(font/Poppins-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-SemiBold.ttf');
+    font-weight: 600;
+}
+/* Farben und Variablen */
+:root {
+    --primary-color: #ffffff;
+    --accent-color: #606060;
+    --hover-color: #ffffff;
+}
+@keyframes glideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Globales Styling */
+body {
+    background-color: #08090A;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+* { margin: 0 auto; }
+
+::-webkit-scrollbar {
+    display: none;
+}
+  
+::selection {
+background-color: #6464642d; /* Grau als Hintergrundfarbe */
+}
+/* Stelle sicher, dass die Elemente standardmäßig unsichtbar sind */
+/* Standard-Stile für die Container, die animiert werden */
+/* Standard-Stile für alle Elemente, bevor sie sichtbar werden */
+/* Standard-Stile für alle Elemente, bevor sie sichtbar werden */
+/* Standard-Stile für alle Elemente, bevor sie sichtbar werden */
+/* Standard-Stile für alle Elemente, bevor sie sichtbar werden */
+.work-process-rectangle, .new-rectangle, .feedback-box, .rectangle, 
+.work-process-rectangle-two, .work-process-rectangle-four, .work-process-rectangle-three,
+.larger-text, .larger-text-two, .larger-text-three, .larger-text-four,
+.faq-item, .view-all-button {
+    opacity: 0;
+    transform: translateY(50px); /* Alle Elemente leicht nach unten verschoben */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation langsamer machen */
+}
+
+/* Reveal-Klasse, die nach Sichtbarkeit hinzugefügt wird */
+.work-process-rectangle.reveal, .new-rectangle.reveal, .feedback-box.reveal, .rectangle.reveal, 
+.work-process-rectangle-two.reveal, .work-process-rectangle-four.reveal, .work-process-rectangle-three.reveal,
+.larger-text.reveal, .larger-text-two.reveal, .larger-text-three.reveal, .larger-text-four.reveal,
+.faq-item.reveal, .view-all-button.reveal {
+    opacity: 1;
+    transform: translateY(0); /* Elemente werden an ihre normale Position verschoben */
+}
+
+
+
+
+
+
+/* Header Container */
+.header-container {
+    background-color: #080a0867;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 30px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    margin: 40px auto 0;
+    transition: all 0.3s ease;
+}
+
+/* Header-Inhalt */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    background-color: transparent;
+    padding: 0 20px;
+    animation: glideInFromBottom 1s ease forwards;
+}
+
+/* Header-Titel */
+.header-title {
+    color: #FFF;
+    font-size: 17px;
+    font-weight: 500;
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 25px;
+    cursor: pointer;
+}
+.main-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: rgb(250, 250, 250);
+    font-size: 50px;
+    text-align: center;
+    margin: 330px auto;
+    line-height: 1.5;
+    position: relative;
+    user-select: none;
+    
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 615px) {
+    .main-text {
+        font-size: 36px;
+        line-height: 7.1vh;
+        margin: 300px auto;
+        user-select: none;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-out-Animation */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Ausgangszustand */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade-in */
+body.fade-in {
+    opacity: 1;
+}
+
+/* Fade-out */
+body.fade-out {
+    opacity: 0;
+}
+
+
+/* Logo */
+.logo {
+    width: 22px;
+    height: auto;
+    user-select: none; /* Verhindert die Textauswahl */
+    z-index: 1001;
+    cursor: pointer;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    user-select: none; /* Verhindert die Textauswahl */
+}
+
+.nav a {
+    color: #dadada;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 28px;
+    padding: 10px 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Linie-Effekt unter dem Link */
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #FFF; /* Weiße Farbe der Linie */
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+/* Hover-Effekt: Linie breitet sich von der Mitte aus nach links und rechts aus */
+.nav a:hover::after {
+    width: 60%; /* Linie breitet sich über die gesamte Breite aus */
+}
+
+/* Icons (menu button) for mobile */
+.icons {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #FFF;
+    position: relative;
+    z-index: 1001;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 616px) {
+    .header-container {
+        padding: 15px;
+        width: 100%;
+        max-width: 350px;
+        margin: 30px auto;
+        border-radius: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    .header-title {
+        margin-left: -50px;
+        text-align: center;
+        flex-grow: 1;
+        z-index: 1001;
+    }
+
+    /* Show menu icon and hide nav on mobile */
+    .icons {
+        display: block;
+    }
+
+    /* Hide nav by default on mobile */
+    /* Mobile Menü - initial verstecken */
+.nav {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute; /* Fixieren, damit Blur besser sichtbar wird */
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+    background-color: rgb(8, 9, 10); /* Halbtransparent für den Hintergrund */
+    z-index: 1000; /* Sicherstellen, dass der Hintergrund über anderen Inhalten liegt */
+
+}
+
+/* Klasse zur Anzeige des Menüs */
+.nav.mobile-shown {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Menü-Link-Design für mobile Ansicht */
+.nav a {
+    font-size: 24px;
+    color: #dadada;
+    margin: 10px 0;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+/* Effekt beim Hover über Links */
+.nav a:hover {
+    color: #ffffff;
+}
+
+/* Icon im Header sichtbar in der mobilen Ansicht */
+@media (max-width: 616px) {
+    .icons {
+        display: block;
+    }
+}
+}
+
+        * {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 80%;
+            max-width: 1506px;
+            margin-inline: auto;
+            position: relative;
+            height: 150px; /* Adjusted height to fit the logos */
+            margin-top: 10rem;
+            overflow: hidden;
+            mask-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 1) 20%,
+                rgba(0, 0, 0, 1) 80%,
+                rgba(0, 0, 0, 0)
+            );
+        }
+
+        @keyframes scrollLeft {
+            to {
+                left: -200px;
+            }
+        }
+
+        .item {
+            width: 40px; /* Adjusted the width */
+            height: 80px; /* Adjusted the height */
+            background-size: contain; /* Ensures that the logo scales without stretching */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Ensures the image is centered */
+            border-radius: 6px;
+            position: absolute;
+            background-color: #0b0d0e00;
+            left: max(calc(150px * 8), 100%);
+            animation-name: scrollLeft;
+            animation-duration: 30s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            opacity: 0.3; /* Sehr niedrige Opazität für die Bilder */
+        }
+        /* CSS für Hover-Farbänderung */
+/* Hover-Effekt mit Farbe #a3f361 */
+/* Hover-Effekt mit der Farbe #A3F361 */
+/* Standard-Stil für die Logos */
+.item {
+    opacity: 0.3; /* Anfangs niedrigere Sichtbarkeit */
+    transition: filter 0.5s ease, opacity 0.5s ease; /* Übergang für sanftes Ein- und Ausblenden */
+}
+
+/* Hover-Effekt mit der Farbe #A3F361 und höherer Deckkraft */
+.item:hover {
+    opacity: 1; /* Volle Sichtbarkeit beim Hover */
+}
+
+        .item1 {
+            background-image: url('/stockx.png');
+            animation-delay: calc(30s / 8 * (8 - 1) * -1);
+        }
+
+        .item2 {
+            background-image: url('/nike.png');
+            animation-delay: calc(30s / 8 * (8 - 2) * -1);
+        }
+
+        .item3 {
+            background-image: url('/rl.png');
+            animation-delay: calc(30s / 8 * (8 - 3) * -1);
+        }
+
+        .item4 {
+            background-image: url('farfetchtwo.png');
+            animation-delay: calc(30s / 8 * (8 - 4) * -1);
+        }
+
+        .item5 {
+            background-image: url('/apple.png');
+            animation-delay: calc(30s / 8 * (8 - 5) * -1);
+        }
+
+        .item6 {
+            background-image: url('/monclizzy.png');
+            animation-delay: calc(30s / 8 * (8 - 6) * -1);
+        }
+
+        .item7 {
+            background-image: url('/bape.png');
+            animation-delay: calc(30s / 8 * (8 - 7) * -1);
+        }
+
+        .item8 {
+            background-image: url('/canadagoose.png');
+            animation-delay: calc(30s / 8 * (8 - 8) * -1);
+        }
+        .item9 {
+            background-image: url('/corteiz.png');
+            animation-delay: calc(30s / 8 * (8 - 9) * -1);
+        }      
+                .item10 {
+            background-image: url('spider.png');
+            animation-delay: calc(30s / 8 * (8 - 10) * -1);
+        }     
+        
+        .main-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 50px;
+            text-align: center;
+            margin: 300px auto 20px;
+        }
+
+        .caption-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            color: #7F7F7F;
+            font-size: 17px;
+            text-align: center;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+            max-width: 80%;
+            user-select: none;
+        }
+.work-process-container {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.work-process-rectangle {
+    display: inline-block;
+    background-color: #0B0D0E;
+    width: 210px;         /* Breite auf 220px setzen */
+    color: #FFF;
+    height: 50px;         /* Höhe auf 50px setzen */
+    font-size: 16px;      
+    font-weight: 100;
+    line-height: 50px;    /* Zeilenhöhe, um den Text vertikal zu zentrieren */
+    border-radius: 50px;
+    border: 1px solid #222;  /* Rand mit 2px Dicke und Farbe #333 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;   /* Text horizontal zentrieren */
+    user-select: none;
+}
+
+/* Stil für den größeren Text unter dem Rechteck */
+.larger-text {
+    font-size: 27px;
+    font-weight: 400;
+    color: #DADADA;
+    margin-top: 2%;
+    user-select: none;
+}
+@media (max-width: 400px) {
+    .larger-text {
+        font-size: 25px;
+        font-weight: 400;
+        color: #DADADA;
+        margin-top: 3%;
+        user-select: none;
+    }
+}
+.new-rectangle-container {
+    display: flex;  
+    justify-content: center;
+    gap: 20px;  
+    text-align: center;
+    margin-top: 50px;
+    flex-wrap: wrap; 
+}
+
+.new-rectangle {
+    display: inline-block;
+    background-color: #0B0D0E;
+    width: 390px;
+    height: 290px;
+    line-height: 60px;
+    padding-top: 130px;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    color: #DFDFDF;
+    user-select: none;
+}
+
+@media (max-width: 400px) {
+    .new-rectangle {
+        width: 355px;
+        height: 280px;
+    }
+}
+
+.rectangle-title {
+    font-size: 21px;
+    font-weight: normal;
+    color: #DFDFDF;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+@media (max-width: 615px) {
+    .rectangle-title {
+        font-size: 20px;
+        line-height: 1.5;
+        max-width: 100%;
+    }
+}
+
+.rectangle-subtext {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #7F7F7F;
+    max-width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -15px;
+    line-height: 1.4;
+}
+@media (max-width: 615px) {
+    .rectangle-subtext {
+        font-size: 15px;
+        margin-left: 30px;
+    }
+}
+.icon-circle {
+    position: absolute; /* Kann durch 'fixed' ersetzt werden, falls es auf dem gesamten Bildschirm zentriert bleiben soll */
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Verschiebt das Element um die H�lfte seiner Breite und H�he */
+    width: 65px;
+    height: 65px;
+    background-color: #ffffff2f;
+    border-radius: 50%;
+    opacity: 1;
+    border: 0.1px solid #6A6A6A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 19;
+}
+
+.icon-circle i {
+    color: #FFF;
+    font-size: 30px;
+    z-index: 20;
+}
+
+
+/* Mobile-first Anpassungen */
+@media (max-width: 768px) {
+    .new-rectangle-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+}
+.work-process-rectangle-two {
+    display: inline-block;
+    background-color: #0B0D0E;
+    width: 150px;
+    color: #FFF;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 50px;
+    border-radius: 50px;
+    border: 1px solid #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    user-select: none;
+}
+.larger-text-two {
+    font-size: 25px;
+    font-weight: 400;
+    color: #DADADA;
+    margin-top: 1%;
+    user-select: none;
+}
+@media (max-width: 400px) {
+    .larger-text-two {
+        font-size: 23px;
+        font-weight: 400;
+        color: #DADADA;
+        margin-top: 3%;
+        user-select: none;
+    }
+}
+.feedback-section {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #DFDFDF;
+}
+
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.feedback-box {
+    background-color: #0B0D0E;
+    width: 390px;
+    height: 250px;
+    padding-top: 60px;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #DFDFDF;
+    position: relative;
+}
+.stars {
+    color: #FFF;
+    margin-bottom: 15px;
+    font-size: 18px;
+    user-select: none;
+}
+
+.feedback-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #DFDFDF;
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    user-select: none;
+}
+.feedback-author {
+    font-size: 15px;
+    font-weight: 500;
+    color: #7F7F7F; 
+    margin-top: 5px;
+    user-select: none;
+}
+
+@media (max-width: 615px) {
+    .feedback-box {
+        width: 350px;
+        height: 230px;
+    }
+    .feedback-text {
+        font-size: 15px;
+    }
+    .feedback-author {
+        font-size: 16px;
+    }
+}
+.work-container {
+    text-align: center;
+    margin-top: 85px;
+}
+.work-process-rectangle-three {
+    display: inline-block;
+    background-color: #0B0D0E;
+    width: 120px; 
+    color: #FFF;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 50px;
+    border-radius: 50px;
+    border: 1px solid #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    user-select: none;
+}
+.larger-text-three {
+    font-size: 23px;
+    font-weight: 400;
+    color: #DADADA;
+    margin-top: 1%;
+    user-select: none;
+}
+@media (max-width: 400px) {
+    .larger-text-three {
+        font-size: 23px;
+        font-weight: 400;
+        color: #DADADA;
+        margin-top: 3%;
+        user-select: none;
+    }
+}
+.work-process-rectangle-four {
+    display: inline-block;
+    background-color: #0B0D0E;
+    width: 200px; 
+    color: #FFF;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 50px;
+    border-radius: 50px;
+    border: 1px solid #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    user-select: none;
+}
+.larger-text-four {
+    font-size: 23px;
+    font-weight: 400;
+    color: #DADADA;
+    margin-top: 1%;
+    user-select: none;
+}
+@media (max-width: 400px) {
+    .larger-text-four {
+        font-size: 22px;
+        font-weight: 400;
+        color: #DADADA;
+        margin-top: 3%;
+        user-select: none;
+    }
+}
+.faq-section {
+    padding: 55px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #DFDFDF;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.faq-item {
+    background-color: #0b0d0e;
+    width: 700px;
+    padding-top: 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #DFDFDF;
+    position: relative;
+    overflow: hidden;
+    height: 90px;
+    min-height: 90px; /* Added minimum height */
+    transition: height 0.4s ease, transform 0.4s ease;
+}
+
+@media (max-width: 400px) {
+    .faq-item {
+        background-color: #0B0D0E;
+        width: 350px;
+        padding-top: 20px;
+        border-radius: 20px;
+        text-align: center;
+        border: 1px solid #222;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #DFDFDF;
+        position: relative;
+        overflow: hidden;
+        height: 90px;
+        min-height: 90px; /* Ensure it doesn't collapse */
+        transition: height 0.4s ease, transform 0.4s ease;
+    }
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 10px 30px 0;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    font-size: 16px;
+    margin-top: 15px;
+    padding: 0 30px;
+    color: #888;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    text-align: left;
+    transform: translateY(-20px);
+    user-select: none;
+    transition: all 0.2s ease-out;
+}
+
+/* When the faq-item is open */
+.faq-item.open {
+    height: 150px;
+}
+
+.faq-answer.open {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Plus Icon */
+.faq-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle-btn::before,
+.faq-toggle-btn::after {
+    content: '';
+    position: absolute;
+    background-color: #DFDFDF;
+    transition: transform 0.3s ease;
+}
+
+.faq-toggle-btn::before {
+    width: 16px;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    background-color: #DFDFDF;
+    transform: translateY(-50%);
+}
+
+.faq-toggle-btn::after {
+    width: 2px;
+    height: 16px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.faq-toggle-btn.open {
+    transform: rotate(45deg);
+}
+
+.faq-toggle-btn.open::before,
+.faq-toggle-btn.open::after {
+    background-color: #FFF; 
+}
+
+/* Ensure better responsive handling on mobile */
+@media (max-width: 768px) {
+    .faq-item {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .faq-answer {
+        font-size: 14px; /* Reduce font size on smaller screens */
+    }
+
+    .faq-question {
+        font-size: 16px;
+    }
+    .faq-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 2px;
+    font-weight: normal;
+    cursor: pointer;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+}
+}
+/* Container für das Rechteck und die Produktinformationen */
+/* Allgemeine Einstellungen für die Produkt-Reihe */
+/* Allgemeine Einstellungen für die Produkt-Reihe */
+.product-row {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 15px;
+}
+
+/* Rechteck-Container Einstellungen */
+.rectangle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+    gap: 10px; /* Abstand zwischen Rechteck und Produktinfos */
+    padding-top: 5vh;
+    margin-bottom: 40px;
+}
+
+/* Stil der Rechtecke */
+.rectangle {
+    width: 250px;
+    height: 230px;
+    border-radius: 40px;
+    background-color: #0B0D0E;
+    border: 1px solid #1E1E1E;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+        opacity: 1;
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sichtbare Rechtecke mit Animation */
+.rectangle.visible {
+    opacity: 1;
+}
+
+/* Bild innerhalb des Rechtecks */
+.rectangle-image {
+    max-width: 80%;
+    max-height: 40%;
+    object-fit: contain;
+    user-select: none;
+}
+
+/* Produktinfo unterhalb des Rechtecks */
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 250px;
+    padding: 0 10px;
+    margin-top: 5px;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 500;
+    color: #888;
+}
+
+/* Responsive Anpassungen für Tablets und Mobilgeräte */
+/* Responsive Anpassungen für Tablets und Mobilgeräte */
+@media (max-width: 768px) {
+    .product-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px; /* Weniger Abstand zwischen den Produkten */
+        margin-top: 5px; /* Reduzierter Abstand nach oben */
+    }
+    .rectangle-container {
+        gap: 3px; /* Weniger Abstand zwischen Rechteck und Produktinfos */
+        margin-bottom: -10px; /* Noch weniger Abstand nach unten */
+    }
+}
+/* Styling für den Button unter den Produkten */
+/* Styling für den Button unter den Produkten */
+.view-all-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view-all-button {
+    display: inline-block;
+    color: white; /* Textfarbe Standard */
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 1px solid transparent; /* Transparenter Rand, bis zum Hover */
+    transition: all 0.3s ease; /* Übergang für alle Effekte */
+}
+
+/* Hover-Effekt */
+.view-all-button:hover {
+    border: 1px solid #222222; /* Rand beim Hover */
+}
+.gif-overlay {
+    position: fixed; /* Das Bild bleibt auch beim Scrollen sichtbar */
+    top: 50%;         /* Positioniert das Bild vertikal in der Mitte */
+    left: 0;          /* Startet auf der linken Seite des Bildschirms */
+    z-index: 9999;    /* Stellt sicher, dass das GIF �ber allen anderen Elementen liegt */
+    pointer-events: none; /* Verhindert, dass das GIF mit anderen Elementen interagiert */
+    animation: moveAcross 8s linear forwards; /* Animation l�uft nur einmal und bleibt am Ende in der Endposition */
+}
+
+.gif-overlay img {
+    width: 150px;     /* Setzt die Breite des GIFs */
+    height: auto;     /* Stellt sicher, dass das Seitenverh�ltnis beibehalten wird */
+}
+
+/* Definiert die Animation */
+@keyframes moveAcross {
+    0% {
+        left: -150px; /* Startposition au�erhalb des Bildschirms auf der linken Seite */
+    }
+    100% {
+        left: 100vw; /* Endposition au�erhalb des Bildschirms auf der rechten Seite */
+    }
+}
+
+
+
+	</style>
+<body class=fade-in><div class=header-container><header><img alt=Logo class=logo src=logo.png onclick=navigateToHome()><h1 class=header-title onclick=navigateToHome()>Anon’s Shop</h1><div class=icons onclick=toggleMenu()>☰</div><nav class=nav><a href=/shop/shop.html>Shop</a> <a href=./status>Status</a> <a href=https://discord.gg/yDezsXKc3a target=_blank>Discord</a></header></div><div class="gif-overlay">
+    <img src="santaa.gif" alt="Santa GIF">
+</div>
+<div class=main-text>Experience Reselling<br>like never before</div><div class=caption-text>Improve your sales with our 1:1 receipts that are always up-to-date,<br>specifically created to your own needs with your custom information.</div><div class=wrapper><div class="item item1"></div><div class="item item2"></div><div class="item item3"></div><div class="item item4"></div><div class="item item5"></div><div class="item item6"></div><div class="item item7"></div><div class="item item8"></div></div><div class=work-process-container><div class=work-process-rectangle>OUR WORK PROCESS</div><div class=larger-text>Top-notch receipts,<br>delivered at your doorstep.</div></div><div class=work-process-container-two><div class=new-rectangle-container><div class=new-rectangle><div class=icon-circle><i class="bx bx-target-lock"></i></div><div class=rectangle-title>Share Your Vision</div><div class=rectangle-subtext>Select a plan and tell us about your resell vison.</div></div><div class=new-rectangle><div class=icon-circle><i class="bx bx-sync"></i></div><div class=rectangle-title>Experience the transformation</div><div class=rectangle-subtext>We specialize in turning your ideas into exceptional, tailor-made receipts.</div></div><div class=new-rectangle><div class=icon-circle><i class="bx bx-chat"></i></div><div class=rectangle-title>Receive continuous support</div><div class=rectangle-subtext>We deliver innovative, high-quality receipts that bring your resell-vision to life.</div></div></div><div class=container><div class=content></div></div><div class=work-process-container><div class=work-process-rectangle-two>FEEDBACK</div><div class=larger-text-two>What our clients say about us.</div></div><div class=feedback-section><div class=feedback-container><div class=feedback-box><div class=stars><i class="fa-star fas"></i> <i class="fa-star fas"></i> <i class="fa-star fas"></i> <i class="fa-star fas"></i> <i class="fa-star fas"></i></div><p class=feedback-text>"Receipt gen quick and easy to use. Looks legit asf"<p class=feedback-author>- neatwayplug</div><div class=feedback-box><div class=stars><i class="fa-star fas"></i> <i class="fa-star fas"></i> <i class="fa-star fas"></i> <i class="fa-star fas"></i> <i class="fa-star fas"></i></div><p class=feedback-text>"100/10 best gen on market. Cant do nothing wrong buying these just perfect."<p class=feedback-author>- John.jones.63</div><div class=feedback-box><div class=stars><i class="fa-star fas"></i> <i class="fa-star fas"></i> <i class="fa-star fas"></i> <i class="fa-star fas"></i> <i class="fa-star fas"></i></div><p class=feedback-text>"Receipt gen works perfectly fine, fast response from owner, would recommend"<p class=feedback-author>- bleb</div></div></div><div class=work-container><div class=work-process-rectangle-four>FEATURED PRODUCTS</div><div class=larger-text-four>Checkout our last Offerings.</div><div class=product-row><a href=/shop/shop.html style=text-decoration:none><div class=rectangle-container><div class="rectangle visible"><img alt="Receipt Generator"class=rectangle-image src=generator.png></div><div class=product-info><p class=product-name>Receipt Generator<p class=product-price>$9.99</div></div></a><a href=/shop/shop.html style=text-decoration:none><div class=rectangle-container><div class="rectangle visible"><img alt="Airpods Vendor"class=rectangle-image src=airpods.png></div><div class=product-info><p class=product-name>Airpods Vendor<p class=product-price>$9.99</div></div></a><a href=/shop/shop.html style=text-decoration:none><div class=rectangle-container><div class="rectangle visible"><img alt="Facebook Account"class=rectangle-image src=facebook.png></div><div class=product-info><p class=product-name>Facebook 3m-1y<p class=product-price>€14.99</div></div></a></div></div></div><div class=view-all-container><a href=/shop/shop.html class=view-all-button>VIEW ALL PRODUCTS</a></div><div class=work-container><div class=work-process-rectangle-three>FAQ</div><div class=larger-text-three>Get answers to most common questions.</div></div><div class=faq-section><div class=faq-container><div class="faq-item open"onclick=toggleFAQ(this)><div class=faq-question><span>What is the Generator?</span><button class="faq-toggle-btn open"></button></div><div class="faq-answer open">The Generator offers high-quality 1 to 1 receipts improved for your reselling business.</div></div><div class=faq-item onclick=toggleFAQ(this)><div class=faq-question><span>How do I place an order?</span><button class=faq-toggle-btn></button></div><div class=faq-answer>To place an order, simply choose the product you want. After you paid just patiently wait.</div></div><div class=faq-item onclick=toggleFAQ(this)><div class=faq-question><span>How long does it take after purchase?</span><button class=faq-toggle-btn></button></div><div class=faq-answer>After Payment, delivery will be instant. Make sure to contact us on Discord.</div></div><div class=faq-item onclick=toggleFAQ(this)><div class=faq-question><span>Can I customize the receipts?</span><button class=faq-toggle-btn></button></div><div class=faq-answer>Yes! You can fully customize the receipts with your own details to suit your needs.</div></div><div class=faq-item onclick=toggleFAQ(this)><div class=faq-question><span>Do I get Help to set up the Receipts?</span><button class=faq-toggle-btn></button></div><div class=faq-answer>Yes, we offer customer support to guide you through to the setup process.</div></div></div></div>
+<script>
+// Funktion zum Umschalten der FAQ
+function toggleFAQ(faqItem) {
+    const answer = faqItem.querySelector('.faq-answer');
+    const button = faqItem.querySelector('.faq-toggle-btn');
+    faqItem.classList.toggle('open');
+    answer.classList.toggle('open');
+    button.classList.toggle('open');
+}
+
+// Funktion zum Umschalten des mobilen Menüs
+function toggleMenu() {
+    const nav = document.querySelector('.nav');
+    const headerTitle = document.querySelector('.header-title');
+    nav.classList.toggle('mobile-shown');
+    headerTitle.classList.toggle('active'); // Aktiviert die .active-Klasse
+}
+
+// Fade-in und Fade-out-Effekte
+document.addEventListener("DOMContentLoaded", () => {
+    // Fade-in beim Laden der Seite
+    document.body.classList.add("fade-in");
+
+    // Wählen Sie alle Container aus, die animiert werden sollen
+    const containers = document.querySelectorAll(
+        ".work-process-rectangle, .new-rectangle, .feedback-box, .rectangle, .work-process-rectangle-two, .work-process-rectangle-four, .work-process-rectangle-three, .larger-text, .larger-text-two, .larger-text-three, .larger-text-four, .faq-item, .faq-item, .view-all-button"
+    );
+
+    // Erstellen des IntersectionObserver
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("reveal"); // Füge die 'reveal' Klasse hinzu, wenn das Element sichtbar wird
+                observer.unobserve(entry.target); // Stoppt das Beobachten des Elements, nachdem es sichtbar wurde
+            }
+        });
+    }, { threshold: 0.1 }); // 10% des Elements müssen sichtbar sein, um die Animation auszulösen
+
+    // Alle Container-Elemente dem Observer hinzufügen
+    containers.forEach(container => revealObserver.observe(container));
+});
+
+// Fade-out beim Verlassen der Seite
+window.addEventListener("beforeunload", function () {
+    document.body.classList.remove("fade-in"); // Entferne evtl. bestehende Fade-in-Klasse
+    document.body.classList.add("fade-out");
+});
+
+// Funktion für die Navigation und das Fade-out beim Verlassen
+function navigateToHome() {
+    // Fade-out hinzufügen, wenn der Nutzer die Seite verlässt
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+        window.location.href = "";
+    }, 500); // Dauer der Animation (500 ms) entsprechend anpassen
+}
+
+// Verzögerung bei der Navigation durch Links
+const links = document.querySelectorAll('a');
+links.forEach(link => {
+    link.addEventListener('click', function (event) {
+        event.preventDefault(); // Standardnavigation verhindern
+        const url = this.href;
+        document.body.classList.remove("fade-in"); // Entferne evtl. bestehende Fade-in-Klasse
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+            window.location.href = url; // Nach der Animation weiterleiten
+        }, 500); // Dauer der Animation (muss mit CSS übereinstimmen)
+    });
+    window.addEventListener("pageshow", (event) => {
+    // Wird ausgelöst, wenn die Seite zurückgesetzt oder aus dem Cache geladen wird
+    document.body.classList.remove("fade-out");
+    document.body.classList.add("fade-in");
+});
+});
+</script>
+
+<p></p>
+</body>
+</html>
