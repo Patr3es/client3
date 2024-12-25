@@ -1,0 +1,413 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(font/Poppins-Bold.ttf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url(font/Poppins-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-SemiBold.ttf');
+    font-weight: 600;
+}
+/* Farben und Variablen */
+:root {
+    --primary-color: #ffffff;
+    --accent-color: #606060;
+    --hover-color: #ffffff;
+}
+
+@keyframes glideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Globales Styling */
+body {
+    background-color: #08090A;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+::selection {
+    background-color: #6464642d; /* Grau als Hintergrundfarbe */
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header Container */
+.header-container {
+    background-color: #080a0867;
+    backdrop-filter: blur(10px);
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 30px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    margin: 40px auto 0;
+    transition: all 0.3s ease;
+}
+
+/* Header-Inhalt */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    background-color: transparent;
+    padding: 0 20px;
+    animation: glideInFromBottom 1s ease forwards;
+}
+
+/* Header-Titel */
+.header-title {
+    color: #FFF;
+    font-size: 17px;
+    font-weight: 500;
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+/* Logo */
+.logo {
+    width: 22px;
+    height: auto;
+    user-select: none; /* Verhindert die Textauswahl */
+    z-index: 1001;
+    cursor: pointer;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    user-select: none; /* Verhindert die Textauswahl */
+}
+
+.nav a {
+    color: #dadada;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 28px;
+    padding: 10px 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Linie-Effekt unter dem Link */
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #B25DEA; /* Weiße Farbe der Linie */
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+/* Hover-Effekt: Linie breitet sich von der Mitte aus nach links und rechts aus */
+.nav a:hover::after {
+    width: 60%; /* Linie breitet sich über die gesamte Breite aus */
+}
+
+/* Icons (menu button) for mobile */
+.icons {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #FFF;
+    position: relative;
+    z-index: 1001;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 616px) {
+    .header-container {
+        padding: 15px;
+        width: 100%;
+        max-width: 350px;
+        margin: 30px auto;
+        border-radius: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    .header-title {
+        margin-left: -50px;
+        text-align: center;
+        flex-grow: 1;
+        z-index: 1001;
+    }
+
+    /* Show menu icon and hide nav on mobile */
+    .icons {
+        display: block;
+    }
+
+    /* Hide nav by default on mobile */
+    /* Mobile Menü - initial verstecken */
+.nav {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute; /* Fixieren, damit Blur besser sichtbar wird */
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+    background-color: rgb(8, 9, 10); /* Halbtransparent für den Hintergrund */
+    z-index: 1000; /* Sicherstellen, dass der Hintergrund über anderen Inhalten liegt */
+
+}
+
+/* Klasse zur Anzeige des Menüs */
+.nav.mobile-shown {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Menü-Link-Design für mobile Ansicht */
+.nav a {
+    font-size: 24px;
+    color: #dadada;
+    margin: 10px 0;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+/* Effekt beim Hover über Links */
+.nav a:hover {
+    color: #ffffff;
+}
+
+/* Icon im Header sichtbar in der mobilen Ansicht */
+@media (max-width: 616px) {
+    .icons {
+        display: block;
+    }
+}
+
+}
+.divider-line {
+    width: 1200px;
+    height: 2px;
+    background-color: #393A3B;
+    margin: 20px auto 50px; /* Zentriert die Linie und sorgt für Abstand oben und unten */
+}
+* {
+    box-sizing: border-box;
+}
+.product-container {
+opacity: 0; /* Unsichtbar */
+transform: translateY(30px); /* Nach unten verschoben */
+transition: opacity 1s ease, transform 0.6s ease;
+}
+
+.product-container.reveal {
+opacity: 1; /* Sichtbar */
+transform: translateY(0); /* Zurück an den ursprünglichen Platz */
+}
+
+
+
+.main-text,
+.caption-text,
+.divider-line {
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.main-text {
+text-align: center;
+font-size: 28px;
+font-weight: 500;
+font-family: 'Poppins', sans-serif;
+margin-top: 250px;
+opacity: 0; /* Startet unsichtbar */
+transform: translateY(30px); /* Startet leicht nach unten verschoben */
+animation: revealAnimation 1s forwards; /* Animation beim Laden der Seite */
+}
+@media (max-width: 615px) {
+.main-text {
+font-size: 27px;
+line-height: 7.1vh;
+margin: 200px auto 0; /* Keine untere Margin */
+}
+}
+
+
+@keyframes revealAnimation {
+0% {
+opacity: 0;
+transform: translateY(30px); /* Startet unterhalb der Endposition */
+}
+100% {
+opacity: 1;
+transform: translateY(0); /* Endposition: Normal */
+}
+}
+
+
+.caption-text {
+text-align: center;
+font-size: 20px;
+font-weight: 500;
+color: #666;
+font-family: 'Poppins', sans-serif;
+margin-top: 15px;
+opacity: 0; /* Startet unsichtbar */
+transform: translateY(30px); /* Startet leicht nach unten verschoben */
+animation: revealAnimationCaption 1s forwards; /* Animation beim Laden der Seite */
+animation-delay: 0.5s; /* Verzögert das Erscheinen der Caption */
+}
+@media (max-width: 615px) {
+.caption-text {
+font-size: 18px;
+}
+}
+
+/* Keyframes für die Reveal-Animation des Main Texts */
+@keyframes revealAnimationMain {
+0% {
+opacity: 0;
+transform: translateY(30px); /* Startet unterhalb der Endposition */
+}
+100% {
+opacity: 1;
+transform: translateY(0); /* Endposition: Normal */
+}
+}
+
+/* Keyframes für die Reveal-Animation der Caption */
+@keyframes revealAnimationCaption {
+0% {
+opacity: 0;
+transform: translateY(30px); /* Startet unterhalb der Endposition */
+}
+100% {
+opacity: 1;
+transform: translateY(0); /* Endposition: Normal */
+}
+}
+
+.divider-line {
+width: 0; /* Startet unsichtbar */
+height: 2px;
+background-color: #333;
+margin: 30px auto;
+transform-origin: center center; /* Mittelpunkt als Ursprung */
+animation: grow-line 2s ease-out forwards;
+}
+
+@keyframes grow-line {
+0% {
+width: 0;
+}
+50% {
+width: 40%; /* Linie wächst nach links und rechts */
+}
+100% {
+width: 40%; /* Linie erreicht volle Breite */
+}
+}
+/* Fade-in-Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-out-Animation */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Fade-in beim Laden */
+body.fade-in {
+    animation: fadeIn 0.5s ease-in; /* Dauer: 0.5 Sekunden */
+}
+
+/* Fade-out beim Verlassen */
+body.fade-out {
+    animation: fadeOut 0.5s ease-out forwards; /* Dauer: 0.5 Sekunden */
+}
+
+
+.work-process-container {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.work-process-rectangle {
+    display: inline-block;
+    background-color: #0B0D0E;
+    width: 700px;
+    height: 70px;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 70px; /* Vertikale Zentrierung */
+    border-radius: 50px;
+    border: 1px solid #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Text links ausrichten */
+    padding-left: 50px; /* Abstand vom linken Rand */
+    user-select: none;
+}
+
+@keyframes rectangleSlideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.work-process-rectangle {
+    animation: rectangleSlideIn 0.8s ease-in-out forwards;
+    opacity: 0; /* Startet unsichtbar */
+}
